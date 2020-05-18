@@ -38,8 +38,8 @@ jobs:
         mkdir -p ~/bin
         wget 'https://storage.googleapis.com/git-repo-downloads/repo' -P ~/bin
         chmod +x ~/bin/repo
-        git config --global user.name "TheKit"
-        git config --global user.email "thekit@disroot.org"
+        git config --global user.name "s-8506"
+        git config --global user.email "s.8506.a@gmail.com"
         source halium.env
         echo "::set-env name=VENDOR::$(echo $VENDOR)"
         echo "::set-env name=DEVICE::$(echo $DEVICE)"
@@ -56,10 +56,10 @@ jobs:
     - name: Clone device spec source
       run: |
         source halium.env
-        git clone https://github.com/ubports-on-fxtec-pro1/android_device_fxtec_pro1.git $ANDROID_ROOT/device/fxtec/pro1 --depth=1
-        git clone https://github.com/ubports-on-fxtec-pro1/android_device_idealte_msm8998-common.git $ANDROID_ROOT/device/idealte/msm8998-common --depth=1
-        git clone https://github.com/ubports-on-fxtec-pro1/proprietary_vendor_idealte.git $ANDROID_ROOT/vendor/idealte --depth=1
-        git clone https://github.com/ubports-on-fxtec-pro1/android_kernel_idealte_msm8998 $ANDROID_ROOT/kernel/idealte/msm8953 --depth=1
+        git clone https://github.com/S-8506/device_zuk_z2_plus_halium.git $ANDROID_ROOT/device/zuk/z2_plus --depth=1
+        git clone https://github.com/S-8506/device_zuk_msm8996-common_halium.git $ANDROID_ROOT/device/zuk/msm8996-common --depth=1
+        git clone https://github.com/S-8506/proprietary_vendor_zuk_halium.git $ANDROID_ROOT/vendor/zuk --depth=1
+        git clone https://github.com/S-8506/kernel_zuk_msm8996_halium.git $ANDROID_ROOT/kernel/zuk/msm8996 --depth=1
 
     - name: Build HAL
       run: |
